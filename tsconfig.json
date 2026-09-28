@@ -1,21 +1,36 @@
 {
     "compilerOptions": {
-      "target": "es6",
+      "ignoreDeprecations": "6.0",
+      "target": "ES2022",
+      "lib": ["es2023", "dom"],
       "allowJs": true,
-      //"checkJs": true,
-      "noEmit": true,
       "baseUrl": "./",
       "skipLibCheck": true,
-      "moduleResolution": "node",
+      "moduleResolution": "Node",
+      "module": "ES2022",
+      "verbatimModuleSyntax": true,
+      "rootDir": "./src",
+      "outDir": "./lib",
+      "inlineSourceMap": true,
+      "noImplicitAny": true,
+      "strictNullChecks": false,
+      "noImplicitThis": false,
+      "declarationMap": true,
+      "forceConsistentCasingInFileNames": true,
+      "allowSyntheticDefaultImports": true,
       "paths": {
         "ol/*": ["node_modules/ol/*"]
-      }
+      },
+      "declaration": true,
+      "declarationDir": "./lib/types"
     },
     "include": [
-      "src/**/*.js",
-      "node_modules/cesium/Source/Cesium.d.ts"
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "src/**/*.test.ts"
     ],
     "typeAcquisition": {
-      "exclude": ["cesium"]
+      "enable": false
     }
 }

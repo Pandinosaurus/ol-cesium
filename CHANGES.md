@@ -1,6 +1,157 @@
 # Changelog
 
-# v 2.13 - 2021-05-20
+## v 2.23.0
+
+* Changes
+  * Replace Jekyll-based gh-pages with GitHub Actions deploy workflow.
+  * Replace Parcel with Vite for examples.
+  * Fix canvas pattern fill rendering in Cesium (was falling back to black).
+  * Fix invalid `</link>` closing tags in example HTML files.
+  * Update KML example data source URL.
+  * Fix types exports map.
+
+## v 2.22.4
+
+* Changes
+  * Fix exports to correctly resolve css.
+  * Stop using deprecated Cesium defaultValue function.
+
+## v 2.22.3
+
+* Changes
+  * Fix typing exports
+
+## v 2.22.2
+
+* Changes
+  * Test with CesiumJS 1.130.
+  * Test with OL 10.5.
+
+## v 2.22.1
+
+* Changes
+  * Port to CesiumJS 1.123.
+
+## v 2.22.0
+
+* Changes
+  * Port to CesiumJS 1.122.
+  * Allow to live edit examples.
+
+## v 2.21.0
+
+* Changes
+  * Changes types to work with OL 9.2, min version is now 9.2
+  * Add OL 10 support.
+  * Port to CesiumJS 1.121.
+
+## v 2.20.0
+
+* Changes
+  * Convert all image WMS sources regardless of their load functions
+  * Allow to force a specific tileLoadFunction using the olcs\_tileLoadFunction property
+  * Test with OL 9.1
+
+* Breaking changes
+  * Rename all 'olcs.xx' properties to 'olcs\_xx' and document them in PROPERTIES.md
+
+## v 2.19.3
+
+* Changes
+  * Support dashed lines by converting the pattern
+  * Fix unlistening condition in camera.\_setView
+  * Introduce olcs.setRefresh2DAfterCameraMoveEndOnly to optimize camera synchronization
+  * Port to Cesium 1.115
+
+## v 2.19.2
+
+* Changes
+  * Add OpenLayers 9 support
+
+## v 2.19.1
+
+* Export OverlaySynchronizer
+
+## v 2.19
+
+* Breaking changes
+  * Bump minimal supported version of OL and CesiumJS and remove compatibility code
+
+* Changes
+  * Port to Cesium 1.114
+  * Fix synchronized overlay initialization
+
+## v 2.18 - 2023-01-29
+
+* Breaking changes
+  * Remove deprecated oldfashioned build
+  * Remove UMD build
+
+## v 2.17 - 2023-01-15
+
+* Breaking changes
+  * Remove olcsListen wrapper. Use observable.on(type, listener) instead
+  * Stop using stable sort (we assume it is implemented by all browsers now)
+  * Make LazyLoader.promise private
+  * Map is now a required parameter of olcs.Manager
+  * Remove unnecessary getOlView, getCesiumViewMatrix, getCameraExtentRectangle from ols.Manager
+  * Remove obsolete stacked corridor function (ground polylines are now supported in Cesium)
+  * Remove oldfashioned (window.olcs global) production build (use a bundler)
+  * Remove UMD build (use the ES6 build)
+* Changes
+  * Migrate more files to typescript
+  * Deprecate some unnecessary wrappers in Camera
+  * Port to Cesium 1.113
+* Deprecation
+  * The UMD build is deprecated and will be removed in 2.18. You should use a bundler.
+  * The "oldfashioned" build is deprecated and will be removed in 2.18. Switch to using ES modules and a bundler.
+  * The export `window.olcs`is deprecatd and will be removed in 2.18.
+  * If you have any comment regarding these changes reach to us.
+
+## v 2.16.1 - 2023-12-21
+
+* Changed
+  * Port to OpenLayers 8.2
+  * Port to Cesium 1.112
+  * Increased camera synchronization precision
+
+## v 2.16 - 2023-09-03
+
+* Changes
+  * Port to OpenLayers 8
+  * Port to Cesium 1.109
+
+## v 2.15.2 - 2023-08-28
+
+* Changes
+  * Rewrite .ts and empty extensions to .js in olcs package
+
+## v 2.15.1 - 2023-08-24
+
+* Changes
+  * Ensure published olcs package only contains javascript (no typescript)
+  * Add computeDPIForPDF function to help creating pdfs with mapfish print
+  * Port to OL 7.5 and CesiumJS 1.108
+  * Fix changing style of MVTImageryProvider
+  * Fix panning and pinch movements
+* Deprecation
+  * computeRectangle and RectangleOutput should now be imported from printUtils
+
+## v 2.15 - 2023-07-26
+
+* Changes
+  * Add function to grab a screenshot from rendered Cesium globe (client side printing)
+  * Port to OL 7.4 and CesiumJS 1.107
+
+## v 2.14.0 - 2023-04-26
+
+* Breaking changes
+  * Use named exports
+
+* Changes
+  * port to CesiumJS 1.104 and OL 7.3
+
+## v 2.13 - 2021-05-20
 
 * Changes
   * Port to CesiumJS 1.81
@@ -8,7 +159,7 @@
   * Copy canvas image when cloning overlay
   * Use tile fonction in MVT imagery provider (handle minus, ...)
 
-# v 2.12 - 2021-01-18
+## v 2.12 - 2021-01-18
 
 * Changes
   * Delete the obsolete plugins directory.
@@ -18,63 +169,63 @@
   * Update to CesiumJS 1.77 and OpenLayers 6.5
   * Expose the resolution from/to distance functions in core
 
-# v 2.11.3 - 2020-09-01
+## v 2.11.3 - 2020-09-01
 
 * Changes
   * Port to OpenLayers 6.4, fix grabbing issue.
 
-# v 2.11.1 - 2020-08-04
+## v 2.11.1 - 2020-08-04
 
 * Changes
   * Remove wrong pixelSize param from getPixelDimensions function
 
-# v 2.11 - 2020-08-04
+## v 2.11 - 2020-08-04
 
 * Changes
   * Handle some custom matrix size for WMTS
   * Update to Cesium 1.70 and add peer dependencies
   * Add missing 'result' param to getPixelDimensions function
 
-# v 2.10 - 2019-10-10
+## v 2.10 - 2019-10-10
 
 * Changes
   * Add a WMTS example.
   * Port to Cesium 1.62.
   * Port to OpenLayers 6 while staying compatible with OpenLayers 5.
 
-# v 2.9 - 2019-04-05
+## v 2.9 - 2019-04-05
 
 * Changes
   * Port to Cesium 1.56.1.
 
-# v 2.8 - 2019-03-13
+## v 2.8 - 2019-03-13
 
 * Changes
   * Port to Cesium 1.55.
 
-# v 2.7.2 - 2019-02-12
+## v 2.7.2 - 2019-02-12
 
 * Changes
   * Fix a type
 
-# v 2.7.1 - 2019-02-08
+## v 2.7.1 - 2019-02-08
 
 * Changes
   * Fix release
 
-# v 2.7 - 2019-02-08
+## v 2.7 - 2019-02-08
 * Changes
   * Port to Cesium 1.54.
   * Document code using typescript.
 
-# v 2.6 - 2018-12-06
+## v 2.6 - 2018-12-06
 
 * Changes
   * Add new build as UMD.
   * Synchronize map interactions when 3D is enabled.
   * Port to Cesium 1.52.
 
-# v 2.5 - 2018-11-09
+## v 2.5 - 2018-11-09
 
 * Breaking changes
   * Icons are now anchored as specified in the OpenLayers style.
@@ -84,12 +235,12 @@
   * Port to Cesium 1.51.
   * Port to OpenLayers 5.3.0.
 
-# v 2.4 - 2018-10-01
+## v 2.4 - 2018-10-01
 
 * Changes
   * Port to Cesium 1.50.
 
-# v 2.3 - 2018-09-27
+## v 2.3 - 2018-09-27
 
 * Changes
   * Port to OpenLayers 5.2.0.
@@ -97,17 +248,17 @@
   * Improve old fashioned build.
   * Port to Cesium 1.49.
 
-# v 2.2.2 - 2018-08-24
+## v 2.2.2 - 2018-08-24
 
 * Changes
   * Stop using internal OpenLayers functions (see oldfashioned example).
 
-# v 2.2.1 - 2018-08-09
+## v 2.2.1 - 2018-08-09
 
 * Changes
   * Export module in package.json.
 
-# v 2.2 - 2018-08-07
+## v 2.2 - 2018-08-07
 
 * Changes
   * Fix dynamic credits handling and add back a Bing example.
@@ -117,7 +268,7 @@
   * Add an old fashioned example (currently requires a custom build of OpenLayers).
   * Fix synchronization issue when a layer has no initial source.
 
-# v 2.1 - 2018-07-13
+## v 2.1 - 2018-07-13
 
 * Changes
   * Port to OpenLayers 5.0.2.
@@ -125,7 +276,7 @@
   * Improve line and outline support for ground primitives.
   * Switch from old style constructors to ES6 classes.
 
-# v 2.0 - 2018-05-04
+## v 2.0 - 2018-05-04
 
 * Breaking changes
   * Migrate to ES6 modules and abandon the Google Closure Compiler build chain
@@ -136,12 +287,12 @@
     it yourself. This is now similar to Cesium, which has always been a
     dependency provided by the application.
 
-# v 1.37 - 2018-05-02
+## v 1.37 - 2018-05-02
 
 * Changes
   * Port to Cesium 1.45.
 
-# v 1.36 - 2018-04-18
+## v 1.36 - 2018-04-18
 
 * Changes
   * Rework the autorenderloop using Cesium RenderMode.
@@ -153,7 +304,7 @@
   * Remove buggy and unused camera.lookAt method.
   * Make the camera.setPosition position the camera in the reference frame.
 
-# v 1.35 - 2018-03-02
+## v 1.35 - 2018-03-02
 
 * Changes
   * Implement stacked ground corridors to improve the rendering of lines on
@@ -164,13 +315,13 @@
     to notably implement arrows along a line clamped on terrain.
   * Port to Cesium 1.43.
 
-# v 1.34 - 2018-01-24
+## v 1.34 - 2018-01-24
 
 * Changes
   * Allow overriding the 3D extent by setting an olcs.extent property in raster layers.
   * Port to OpenLayers 4.6.4 and Cesium 1.41.
 
-# v 1.33 - 2017-12-07
+## v 1.33 - 2017-12-07
 
 * Changes
   * Animate olcs.contrib.Manager#toggle3d.
@@ -183,7 +334,7 @@
   * Add preliminary work for an ES6 package https://www.npmjs.com/package/olcs.
   * Remove management of ol.source.ImageVector. This class is deprecated in OpenLayers 4.6.2.
 
-# v 1.32 - 2017-10-26
+## v 1.32 - 2017-10-26
 
 * Breaking changes
   * Changed AbstractSynchronizer.createSingleLayerCounterparts Plugin API
@@ -203,7 +354,7 @@
   * Add ol.layer.Group synchronization
   * Port to OpenLayers 4.4.2 and Cesium 1.38.
 
-# v 1.31 - 2017-09-06
+## v 1.31 - 2017-09-06
 
 * Changes
   * Port to OpenLayers 4.3.2
@@ -216,13 +367,13 @@
   * Switch to @camptocamp/cesium to allow examples based on vector tiles and
     advanced performance optimizations.
 
-# v 1.30 - 2017-08-03
+## v 1.30 - 2017-08-03
 
 * Changes
   * Port to Cesium 1.36. This fixes blinking of the vector example
     https://github.com/openlayers/ol-cesium/issues/465.
 
-# v 1.29 - 2017-07-12
+## v 1.29 - 2017-07-12
 
 * Changes
   * Port to OpenLayers 4.2.0.
@@ -230,26 +381,26 @@
     it necessary to display the examples using an ES6-capable browser.
   * Port to Cesium 1.35.2.
 
-# v 1.28 - 2017-06-02
+## v 1.28 - 2017-06-02
 
 * Changes
   * Port to Cesium 1.34.
   * Use all the styles defined for a feature.
   * Display geometries coming from style (using getGeometryFunction()).
 
-# v 1.27- 2017-05-04
+## v 1.27- 2017-05-04
 
 * Changes
   * Port to OpenLayers 4.1.1.
   * Port to cesium 1.33.
 
-# v 1.26 - 2017-04-04
+## v 1.26 - 2017-04-04
 
 * Changes
   * WMTS OpenLayers layers are now automatically converted to Cesium layers.
   * Port to Cesium 1.32.
 
-# v 1.25 - 2017-03-28
+## v 1.25 - 2017-03-28
 
 * Breaking changes
   * Stop returning promise from olcs.core.rotateAroundAxis function.
@@ -259,17 +410,17 @@
   * Add example rotate.html about animating rotation of the Cesium globe.
   * Convert source to Ecmascript 6. Continue to output Ecmascript 5.1.
 
-# v 1.24.3 - 2017-02-17
+## v 1.24.3 - 2017-02-17
 
 * Changes
   * For npm.
 
-# v 1.24.2 - 2017-02-17
+## v 1.24.2 - 2017-02-17
 
 * Changes
   * Final rename and publication of the project as a new npm project.
 
-# v 1.24.1 - 2017-02-17
+## v 1.24.1 - 2017-02-17
 
 * Changes
   * Renamed project to OL-Cesium following the renaming of the OpenLayers3 project.
@@ -280,27 +431,27 @@
       make cleanall
     Note that the distributed js file is olcesium.js
 
-# v 1.24 - 2017-02-17
+## v 1.24 - 2017-02-17
 
 * Changes
   * Clamp line to the ground using Corridor geometry (experimental feature).
   * Port to Cesium 1.30.
   * Port to OpenLayers 4.0.1.
 
-# v 1.23 - 2017-01-04
+## v 1.23 - 2017-01-04
 
 * Changes
   * Port to Cesium 1.29.
   * Port to OpenLayers 3.20.0.
 
-# v 1.22 - 2016-12-02
+## v 1.22 - 2016-12-02
 
 * Changes
   * Port to Cesium 1.28.
   * Add OLCesium.setTargetFrameRate to enforce an fps limit for Cesium.
   * Add OLCesium option `time` to control the current time passed to Cesium.
 
-# v 1.21 - 2016-11-02
+## v 1.21 - 2016-11-02
 
 * Changes
   * Add olcs.OLCesium.trackedFeature property to make Cesium automatically track an
@@ -309,26 +460,26 @@
   * Port to OpenLayers 3.19.1.
   * Port to Cesium 1.27.
 
-# v 1.20 - 2016-09-02
+## v 1.20 - 2016-09-02
 
 * Changes
   * Port to Cesium 1.25.
   * Port to OpenLayers 3.18.2.
 
-# v 1.19 - 2016-08-08
+## v 1.19 - 2016-08-08
 
 * Changes
   * Require node 4 or 6.
   * Port to Cesium 1.24.
 
-# v 1.18 - 2016-07-18
+## v 1.18 - 2016-07-18
 
 * Changes
   * Port to Cesium 1.23.
   * Port to OL 3.17.1 (include OL3 typedefs.js and rename some symbols).
   * In examples, use OSM instead of obsolete MapQuest tiles.
 
-# v 1.17 - 2016-06-23
+## v 1.17 - 2016-06-23
 
 * Changes
   * Port to Cesium 1.22.
@@ -347,9 +498,9 @@
     curves instead of straight lines. This functionality can be activated by
     setting the olcs.polygon_kind property to 'rectangle' on the OpenLayers
     geometry.
-  * Add support to set a proxy for Cesium to load layer not accessible 
-    due to missing CORS headers (eg. when user can't modify configuration 
-    of the mapservice used). This functionality can be activated by 
+  * Add support to set a proxy for Cesium to load layer not accessible
+    due to missing CORS headers (eg. when user can't modify configuration
+    of the mapservice used). This functionality can be activated by
     setting the olcs.proxy property to the OpenLayers source.
 
 ## v 1.15 - 2016-04-28
@@ -457,7 +608,7 @@
     * Core static functions for converting from OL3 features to Cesium primitives
       have been moved into a class designed for inheritance.
       The `olcs.FeatureConverter` may be extended and passed as a parameter of
-      the `olcs.VectorSynchronizer` constructor. See the synchronizer function 
+      the `olcs.VectorSynchronizer` constructor. See the synchronizer function
       parameter of the `olcs.OLCesium` constructor. Subclassing requires that
       the subclass and the library code be compiled together.
       One way of migrating existing code is to define a global variable:
